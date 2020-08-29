@@ -10,6 +10,7 @@ export class ProductCrudComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  // tslint:disable-next-line: no-empty
   ngOnInit(): void { }
 
   navigateToProductCreate(): void {
