@@ -1,5 +1,5 @@
 import { CustomMatPaginatorIntl } from './paginator-ptbr';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,7 +34,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -69,6 +72,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule
   ],
   providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR',
+    },
     {
       provide: MatPaginatorIntl,
       useClass: CustomMatPaginatorIntl
