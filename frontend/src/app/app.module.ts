@@ -1,3 +1,4 @@
+import { CustomMatPaginatorIntl } from './paginator-ptbr';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +31,7 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 
@@ -67,7 +68,12 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: CustomMatPaginatorIntl
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
