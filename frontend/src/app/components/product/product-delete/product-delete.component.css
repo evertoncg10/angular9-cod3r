@@ -7,3 +7,13 @@ form {
 button {
   margin: 20px 20px 0 0;
 }
+
+button.deletar {
+  background-color: #bd2736;
+  color: white;
+}
+
+button.deletar:hover {
+  background-color: #d53343;
+  color: white;
+}
